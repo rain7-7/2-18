@@ -1,0 +1,72 @@
+//模拟实现strcpy函数
+#include <assert.h>
+#include <stdio.h>
+
+//NO.1----(10分给6分)
+void my_strcpy(char* dest, char* src)
+{
+	
+	while (*dest!=0)
+	{
+	  *dest=*src;
+                   dest++;
+                    src++;
+	}
+                *dest=0;
+
+}
+int main()
+{
+                char arr1[] = "bit";
+	char arr2[] = "###############";
+                my_strcpy(arr2, arr1);
+	printf("%s\n",arr2 );
+	return 0;
+
+}
+
+
+//NO.2（10分给8分）
+void my_strcpy(char* dest, char* src)
+{
+	assert(dest != NULL);
+	assert(src != NULL);
+	while (*dest++ = *src++)
+	{
+		;
+	}
+}
+int main()
+{
+                char arr1[] = "bit";
+	char arr2[] = "###############";
+                my_strcpy(arr2, arr1);
+	printf("%s\n",arr2 );
+	return 0;
+
+}
+
+
+
+
+//最优解（10分优解）
+char* my_strcpy(char* dest,const char* src)
+{
+	char *ret = dest;
+	assert(dest != NULL);
+	assert(src != NULL);
+	while (*dest++ = *src++)
+	{
+		;
+	}
+	return ret;
+}
+
+
+int main()
+{
+	char arr1[] = "bit";
+	char arr2[] = "###############";
+	printf("%s\n", my_strcpy(arr2, arr1));
+	return 0;
+}
